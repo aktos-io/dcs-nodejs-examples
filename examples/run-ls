@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+DIR=$(dirname "$(readlink -f "$0")")
+
+export NODE_PATH="$DIR/..:$NODE_PATH"
+echo "NODE PATH: $NODE_PATH"
+lsc $*
