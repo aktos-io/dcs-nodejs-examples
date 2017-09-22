@@ -1,7 +1,7 @@
 require! 'dcs': {Actor, sleep}
-require! 'dcs/connectors/omron': {HostlinkSerialActor}
+require! 'dcs/connectors/omron': {HostlinkSerialConnector}
 
-new HostlinkSerialActor do
+new HostlinkSerialConnector do
     transport:
         baudrate: 9600baud
         port: '/dev/ttyUSB0'
