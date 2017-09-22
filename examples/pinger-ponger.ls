@@ -3,9 +3,6 @@ require! 'dcs/lib': {pack, unpack}
 
 
 class Pinger extends Actor
-    ->
-        super 'pinger'
-
     action: ->
         <~ :lo(op) ~>
             <~ sleep 1000ms
@@ -16,15 +13,13 @@ class Pinger extends Actor
 
 
 class Ponger extends Actor
-    ->
-        super 'ponger'
+    action: ->
         @subscribe 'ponger.**'
-
         @on \data, (msg) ~>
             @log.log "got message: ", msg.payload
             <~ sleep 2000ms
             @send-response msg, 'this message is a response from ponger'
 
 
-new Pinger!
-new Ponger!
+new Pinger \ping
+new Ponger \pong

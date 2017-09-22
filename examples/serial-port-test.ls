@@ -2,10 +2,11 @@ require! 'dcs/transports/serial-port': {SerialPortTransport}
 require! 'dcs': {Logger, sleep}
 
 logger = new Logger 'APP'
-port = new SerialPortTransport {
+port = new SerialPortTransport do
     baudrate: 9600baud
     port: '/dev/ttyUSB0'
-    }
+
+port
     ..on \connect, ->
         logger.log "app says serial port is connected"
 

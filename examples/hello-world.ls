@@ -1,9 +1,6 @@
 require! 'dcs': {Actor, sleep}
 
 class Hello extends Actor
-    ->
-        super!
-
     action: ->
         <~ :lo(op) ~>
             @log.log "hello!"
@@ -11,9 +8,6 @@ class Hello extends Actor
             lo(op)
 
 class World extends Actor
-    ->
-        super!
-
     action: ->
         <~ :lo(op) ~>
             @log.log "world!"
