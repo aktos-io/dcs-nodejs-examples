@@ -12,5 +12,9 @@ class Ponger extends Actor
             @send-response msg, 'this message is a response from ponger'
 
 
-new TCPProxyClient {port: 5678} .login!
-new Ponger!
+ponger = new Ponger!
+new TCPProxyClient {port: 5678}
+    ..login!
+    ..on \logged-in, ->
+        ponger.log.log "Sending start message"
+        ponger.send "public.pinger", {lets: \start}
