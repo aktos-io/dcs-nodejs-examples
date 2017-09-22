@@ -8,8 +8,9 @@ server = net.create-server (socket) ->
     protocol = new HostlinkProtocol transport
     connector = new OmronProtocolActor protocol, do
         subscribe: 'public.**'
-        
-    connector.on \end, ~>
+
+    transport.on \end, ~>
+        connector.log.log "End point disconnected, killing itself."
         connector.kill!
 
 server.listen 2000, '0.0.0.0', ~>
