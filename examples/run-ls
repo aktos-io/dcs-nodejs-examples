@@ -1,5 +1,1 @@
-#!/bin/bash
-DIR=$(dirname "$(readlink -f "$(type -P $0 || echo $0)")")
-
-export NODE_PATH="$DIR/..:$DIR/../dcs/node_modules:$NODE_PATH"
-lsc $*
+../dcs/tools/run-ls
