@@ -74,3 +74,7 @@ Demonstrates how to communicate with a Omron PLC over Hostlink protocol over ser
     ```bash 
     ./run-ls hostlink-over-serial.ls
     ```
+
+### 6. Communicating with external dcs webapps
+
+See [Playground](N4IgLiBcIgNCBnKIB2BTA7gAgCYGMEA6AEQIGUB7PAazTAEkB5AIQCcKME1WAKYAHRRYsAQxw5WaBAkhYA5AAswYAA4yA9OpHUwFIgEsK6ubEHCVIsAtlz1CMMcEBfAJSDB6bACUReMPoA3ND4zLDQAGxsAIwocAE8TULA0AFsVcMs0WQADUOEAHhUAPgBxCixdLHyRCpFWAHM6AF5)
